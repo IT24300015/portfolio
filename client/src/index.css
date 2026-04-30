@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Courier New', 'JetBrains Mono', monospace;
+  background: #0a0e27;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Cybersecurity theme colors */
+:root {
+  --neon-cyan: #00d4ff;
+  --neon-purple: #b833ff;
+  --neon-green: #00ff41;
+  --dark-bg: #0a0e27;
+  --dark-card: #1a1f3a;
+  --border-cyan: #00d4ff;
+}
+
+/* Glow effects */
+.glow-cyan {
+  text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+  color: #00d4ff;
+}
+
+.glow-purple {
+  text-shadow: 0 0 10px #b833ff, 0 0 20px #b833ff;
+  color: #b833ff;
+}
+
+.glow-green {
+  text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+  color: #00ff41;
+}
+
+.border-glow {
+  border: 1px solid #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
+  }
+}
+
+@keyframes cyber-enter {
+  from {
+    opacity: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-cyber-enter {
+  animation: cyber-enter 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Utility classes */
+.glass {
+  background: rgba(26, 31, 58, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+  border-color: #00d4ff;
+}
+
+.button-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg font-bold hover:shadow-lg transition-all duration-300 cursor-pointer border border-cyan-400;
+  text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.button-primary:hover {
+  @apply shadow-lg;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(184, 51, 255, 0.3);
+}
+
+.button-secondary {
+  @apply px-6 py-3 border-2 text-cyan-400 rounded-lg font-bold hover:bg-cyan-950 transition-all duration-300 cursor-pointer;
+  border-color: #00d4ff;
+}
+
+.button-secondary:hover {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.section-heading {
+  @apply text-4xl font-bold text-center mb-12;
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
