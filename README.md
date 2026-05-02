@@ -1,6 +1,6 @@
 # Nilakshan's Portfolio Website
 
-A modern frontend portfolio website built with React (Vite) and deployed as a static app.
+A modern frontend portfolio website built with plain HTML, CSS, and JavaScript.
 
 ## Features
 
@@ -14,14 +14,13 @@ A modern frontend portfolio website built with React (Vite) and deployed as a st
 
 ```
 /portfolio
-  /client              → React Vite frontend
+  /client              → Static website
+    index.html         → Main page
     /src
-      /components      → Reusable React components
-      App.jsx         → Main app component
-      index.css       → Tailwind + custom styles
-    package.json      → Frontend dependencies
-    vite.config.js    → Vite configuration
-    tailwind.config.js → Tailwind CSS configuration
+      main.js          → Main JavaScript logic
+      index.css        → Stylesheet
+    /public
+      profile.jpeg     → Profile image
 
   .gitignore          → Git ignore rules
   README.md           → This file
@@ -29,34 +28,15 @@ A modern frontend portfolio website built with React (Vite) and deployed as a st
 
 ## Getting Started
 
-### Prerequisites
-- Node.js (v14+)
-- npm or yarn
-
-### Installation
-
 1. Clone the repository
    ```bash
    git clone https://github.com/your-username/nilakshan-portfolio.git
-   cd portfolio/client
+   cd portfolio
    ```
 
-2. Install frontend dependencies
-   ```bash
-   npm install
+2. Open the file directly in your browser:
    ```
-
-### Development
-
-1. Start the frontend
-   ```bash
-   npm run dev
-   # Frontend runs on http://localhost:5173
-   ```
-
-2. Open in browser
-   ```
-   http://localhost:5173
+   client/index.html
    ```
 
 ## Deployment
@@ -72,20 +52,20 @@ GitHub Pages setup:
 3. Set Source to GitHub Actions.
 4. Push to `master` branch to trigger deployment.
 
-The workflow builds the Vite app from `client/` and publishes `client/dist` automatically.
+The workflow publishes the static `client/` folder directly.
 
 ## Customization
 
-- Edit component files in `client/src/components/`
-- Update project content in `Projects.jsx`
-- Update contact details in `Contact.jsx`, `Hero.jsx`, and `Footer.jsx`
+- Edit layout content directly in `client/index.html`
+- Update portfolio data in `client/src/main.js`
+- Update styles in `client/src/index.css`
 - Replace `profile.jpeg` in `client/public/` if needed
 
 ## Technologies Used
 
-- React 18
-- Vite
-- Tailwind CSS
+- HTML5
+- CSS3
+- JavaScript
 - Modern CSS animations
 
 ## Support
