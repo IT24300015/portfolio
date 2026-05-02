@@ -19,10 +19,10 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 w-full glass-dark border-b border-cyan-900 shadow-lg z-50">
+    <nav role="navigation" aria-label="Main Navigation" className="fixed top-0 w-full bg-white border-b border-gray-200 shadow-sm z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold font-mono glow-cyan tracking-wider">
-          &gt; NILAKSHAN
+        <div className="text-2xl font-bold text-blue-900">
+          NIMESH
         </div>
 
         {/* Desktop Menu */}
@@ -31,9 +31,9 @@ export default function Navbar() {
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
-              className="text-cyan-300 hover:text-cyan-100 font-mono text-sm tracking-widest transition hover:glow-cyan"
+              className="text-gray-700 hover:text-blue-600 font-medium text-sm transition focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
             >
-              [{link.name}]
+              {link.name}
             </button>
           ))}
         </div>
@@ -41,23 +41,26 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col gap-1"
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          className="md:hidden flex flex-col gap-1 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
         >
-          <span className="w-6 h-0.5 bg-cyan-400 block"></span>
-          <span className="w-6 h-0.5 bg-cyan-400 block"></span>
-          <span className="w-6 h-0.5 bg-cyan-400 block"></span>
+          <span className="w-6 h-0.5 bg-gray-700 block"></span>
+          <span className="w-6 h-0.5 bg-gray-700 block"></span>
+          <span className="w-6 h-0.5 bg-gray-700 block"></span>
         </button>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="absolute top-16 left-0 right-0 glass-dark rounded-b-lg p-4 md:hidden border-b border-cyan-900">
+          <div id="mobile-menu" className="absolute top-16 left-0 right-0 bg-white rounded-b-lg p-4 md:hidden border-b border-gray-200 mobile-menu-open">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left py-2 text-cyan-300 hover:text-cyan-100 font-mono text-sm"
+                className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
               >
-                [{link.name}]
+                {link.name}
               </button>
             ))}
           </div>
